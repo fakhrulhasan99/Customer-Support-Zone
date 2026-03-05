@@ -3,20 +3,16 @@ import React from 'react';
 const TicketData = ({ ticket, onAdd }) => {
     // console.log(onAdd)
     const tag = 1000 + ticket.id;
+    const priorityColor = {
+        High: "text-red-600",
+        Medium: "text-yellow-400",
+        Low: "text-green-500"
+    };
 
     return (
-        // {
-        //     "id": 1,
-        //     "title": "Login page not loading",
-        //     "description": "Customer reports that the login page keeps loading indefinitely on mobile devices.",
-        //     "customer": "Ayesha Rahman",
-        //     "priority": "High",
-        //     "status": "Open",
-        //     "createdAt": "2026-03-01T09:15:00"
-        // }
         <div
             className="card bg-base-100 shadow-sm cursor-pointer hover:shadow-lg transition"
-            onClick={() => onAdd(ticket)}   // 🔥 CLICK EVENT
+            onClick={() => onAdd(ticket)}
         >
             <div className="card-body">
                 <h2 className="card-title justify-between">
@@ -29,7 +25,9 @@ const TicketData = ({ ticket, onAdd }) => {
                 <div className="flex justify-between">
                     <div className="card-actions justify-start">
                         <div className="badge">#{tag}</div>
-                        <div className="badge">{ticket.priority} Priority</div>
+                        <div className={priorityColor[ticket.priority]}>
+                            {ticket.priority} Priority
+                        </div>
                     </div>
                     <div className="card-actions justify-end">
                         <div className="badge font-bold">{ticket.customer}</div>

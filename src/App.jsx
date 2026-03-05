@@ -70,35 +70,35 @@ function App() {
           {/* Customer Tickets */}
           <div className='col-span-3'>
             <h2 className='text-2xl font-bold pb-4'>Customer Tickets</h2>
-
-            {availableTickets.length === 0 ? (
-              <p className="text-gray-500">
-                No more tickets available.
-              </p>
-            ) : (
-              <div className='grid gap-4 grid-cols-1 lg:grid-cols-2'>
-                {
-                  availableTickets.map(ticket => (
-                    <TicketData
-                      key={ticket.id}
-                      ticket={ticket}
-                      onAdd={handleAddToProgress}
-                    />
-                  ))
-                }
-              </div>
-            )}
+            {
+              availableTickets.length === 0 ? (
+                <p className="text-gray-500">
+                  No more tickets available.
+                </p>
+              ) : (
+                <div className='grid gap-4 grid-cols-1 lg:grid-cols-2'>
+                  {
+                    availableTickets.map(ticket => (
+                      <TicketData
+                        key={ticket.id}
+                        ticket={ticket}
+                        onAdd={handleAddToProgress}
+                      />
+                    ))
+                  }
+                </div>
+              )
+            }
           </div>
 
-          {/* Right Side */}
+          {/* Tasks Side */}
           <div>
             <TaskStatus
               inProgress={inProgress}
               onComplete={handleComplete}
             />
-            
+            <ResolvedTask resolved={resolved} />
           </div>
-
         </div>
       </div>
 
