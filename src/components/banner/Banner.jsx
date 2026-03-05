@@ -9,7 +9,7 @@ const Banner = ({ inProgressCount, resolvedCount }) => {
             <div
                 className="hero rounded-2xl text-white relative overflow-hidden bg-linear-to-r from-[#632EE3] to-[#9F62F2]"
             >
-                {/* Left texture */}
+
                 <div
                     className="absolute left-0 top-0 h-full w-48 bg-no-repeat bg-left"
                     style={{
@@ -17,8 +17,6 @@ const Banner = ({ inProgressCount, resolvedCount }) => {
                         backgroundSize: "contain"
                     }}
                 />
-
-                {/* Right mirrored texture */}
                 <div
                     className="absolute right-0 top-0 h-full w-48 bg-no-repeat"
                     style={{
@@ -40,7 +38,7 @@ const Banner = ({ inProgressCount, resolvedCount }) => {
             <div
                 className="hero rounded-2xl text-white relative overflow-hidden bg-linear-to-r from-[#54CF68] to-[#00827A]"
             >
-                {/* Left texture */}
+
                 <div
                     className="absolute left-0 top-0 h-full w-48 bg-no-repeat bg-left"
                     style={{
@@ -48,8 +46,6 @@ const Banner = ({ inProgressCount, resolvedCount }) => {
                         backgroundSize: "contain"
                     }}
                 />
-
-                {/* Right mirrored texture */}
                 <div
                     className="absolute right-0 top-0 h-full w-48 bg-no-repeat"
                     style={{

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TicketData = ({ ticket, onAdd }) => {
-    // console.log(onAdd)
+
     const tag = 1000 + ticket.id;
     const priorityColor = {
         High: "text-red-600",
@@ -12,16 +12,6 @@ const TicketData = ({ ticket, onAdd }) => {
         "Open": "badge badge-info",
         "In Progress": "badge badge-warning"
     };
-    // const getStatusBadge = (status) => {
-    //     switch (status) {
-    //         case "Open":
-    //             return "badge badge-info";
-    //         case "In Progress":
-    //             return "badge badge-warning";
-    //         default:
-    //             return "badge";
-    //     }
-    // };
 
     return (
         <div
@@ -31,7 +21,6 @@ const TicketData = ({ ticket, onAdd }) => {
             <div className="card-body">
                 <h2 className="card-title justify-between">
                     {ticket.title}
-                    {/* <h2 className='badge badge-success'>open sd sd sd</h2> */}
                     <div className={`${getStatusBadge[ticket.status]} whitespace-nowrap px-3`}>
                         {ticket.status}
                     </div>

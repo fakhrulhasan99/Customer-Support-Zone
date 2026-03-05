@@ -13,22 +13,21 @@ const ticketsData = fetch('/tickets.json').then(res => res.json())
 function App() {
 
   const tickets = use(ticketsData);
-
   const [allTickets, setAllTickets] = useState([]);
   const [inProgress, setInProgress] = useState([]);
   const [resolved, setResolved] = useState([]);
 
-  // initialize once
   useEffect(() => {
     setAllTickets(tickets);
   }, [tickets]);
 
-  // ADD TO PROGRESS
   const handleAddToProgress = (ticket) => {
 
-    if (inProgress.some(t => t.id === ticket.id)) return;
+    if (inProgress.some(t => t.id === ticket.id)) {
+      toast.error("Task already moved to Progress!");
+      return
+    };
 
-    // update ticket status
     const updatedTickets = allTickets.map(t =>
       t.id === ticket.id ? { ...t, status: "In Progress" } : t
     );
@@ -37,23 +36,19 @@ function App() {
 
     setInProgress(prev => [...prev, { ...ticket, status: "In Progress" }]);
 
-    toast.success("Task moved to In-Progress!");
+    toast.success("Task moved to Progress!");
   };
 
-  // COMPLETE TASK
   const handleComplete = (ticket) => {
 
-    // remove from progress
     setInProgress(prev =>
       prev.filter(t => t.id !== ticket.id)
     );
 
-    // remove from main ticket list
     setAllTickets(prev =>
       prev.filter(t => t.id !== ticket.id)
     );
 
-    // add to resolved
     setResolved(prev => [...prev, ticket]);
 
     toast.success("Task Completed Successfully!");

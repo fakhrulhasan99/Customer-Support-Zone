@@ -1,16 +1,23 @@
-# React + Vite
+# React Basic Questions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1️⃣ What is JSX and why is it used?
 
-Currently, two official plugins are available:
+JSX means JavaScript XML.
+It allows us to write HTML-like code inside JavaScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 2️⃣ Difference between State and Props
 
-## React Compiler
+Props are used to pass data from a parent component to a child component. Props cannot be changed by the child component.
+State is data that can change over time. When state changes, React re-renders the component.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 3️⃣ What is useState hook?
 
-## Expanding the ESLint configuration
+useState is a React hook that lets us add state to a functional component.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 4️⃣ How to share state between components?
+
+To share state between components, we usually move the state to their common parent component. The parent keeps the state and sends it to child components using props.
+
+## 5️⃣ How event handling works in React?
+
+Event handling in React is similar to HTML but the naming style is different. React uses camelCase for events.
