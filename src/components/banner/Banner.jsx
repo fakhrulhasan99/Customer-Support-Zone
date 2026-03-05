@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import BgImg from '../../assets/vector1.png'
 
-const Banner = () => {
+const Banner = ({ inProgressCount, resolvedCount }) => {
 
-    const [progress, setProgress] = useState(0);
+
     return (
         <div className='max-w-350 mx-auto flex flex-col lg:flex-row gap-5 p-5 lg:p-10'>
             <div
@@ -31,7 +31,9 @@ const Banner = () => {
                 <div className="hero-content text-center relative z-10">
                     <div className="py-3 max-w-md">
                         <h1 className="text-2xl">In-Progress</h1>
-                        <p className="py-3 text-5xl font-bold">{progress}</p>
+                        <p className="py-3 text-5xl font-bold">
+                            {inProgressCount}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -57,10 +59,14 @@ const Banner = () => {
                     }}
                 />
 
-                <div className="hero-content text-center relative z-10">
-                    <div className="py-3 max-w-md">
-                        <h1 className="text-2xl">In-Progress</h1>
-                        <p className="py-3 text-5xl font-bold">{progress}</p>
+                <div className="hero rounded-2xl text-white relative overflow-hidden bg-linear-to-r from-[#54CF68] to-[#00827A]">
+                    <div className="hero-content text-center relative z-10">
+                        <div className="py-3 max-w-md">
+                            <h1 className="text-2xl">Resolved</h1>
+                            <p className="py-3 text-5xl font-bold">
+                                {resolvedCount}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
