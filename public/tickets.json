@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "title": "Login page not loading",
+    "description": "Customer reports that the login page keeps loading indefinitely on mobile devices.",
+    "customer": "Ayesha Rahman",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-01"
+  },
+  {
+    "id": 2,
+    "title": "Payment failed but amount deducted",
+    "description": "User was charged via card but order status shows unpaid.",
+    "customer": "Imran Hossain",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-01"
+  },
+  {
+    "id": 3,
+    "title": "Unable to reset password",
+    "description": "Reset password email is not being received after multiple attempts.",
+    "customer": "Nusrat Jahan",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-03-02"
+  },
+  {
+    "id": 4,
+    "title": "Profile picture upload error",
+    "description": "User receives a file format error when uploading a valid JPG image.",
+    "customer": "Fahim Ahmed",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2026-03-02"
+  },
+  {
+    "id": 5,
+    "title": "Dashboard statistics incorrect",
+    "description": "Sales numbers are not matching with the backend reports.",
+    "customer": "Tanvir Islam",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-02"
+  },
+  {
+    "id": 6,
+    "title": "App crashes on startup",
+    "description": "Android users report the app closes immediately after opening.",
+    "customer": "Sadia Akter",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-02"
+  },
+  {
+    "id": 7,
+    "title": "Email notifications not working",
+    "description": "Customer does not receive order confirmation emails.",
+    "customer": "Rafid Karim",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-03-03"
+  },
+  {
+    "id": 8,
+    "title": "Search functionality slow",
+    "description": "Search results take more than 10 seconds to load.",
+    "customer": "Mehedi Hasan",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-03-03"
+  },
+  {
+    "id": 9,
+    "title": "Incorrect invoice generated",
+    "description": "Invoice shows wrong product quantity after checkout.",
+    "customer": "Jannatul Ferdous",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-03"
+  },
+  {
+    "id": 10,
+    "title": "Language switch not saving",
+    "description": "Selected language resets to default after page refresh.",
+    "customer": "Arif Chowdhury",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2026-03-03"
+  },
+  {
+    "id": 11,
+    "title": "Coupon code invalid error",
+    "description": "Valid promo code shows invalid error during checkout.",
+    "customer": "Mariam Khan",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-03-03"
+  },
+  {
+    "id": 12,
+    "title": "Order history missing",
+    "description": "Customer cannot see previous orders in account dashboard.",
+    "customer": "Shakib Al Hasan",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-04"
+  },
+  {
+    "id": 13,
+    "title": "Two-factor authentication issue",
+    "description": "OTP code expires too quickly before user can enter it.",
+    "customer": "Tanjila Noor",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-03-04"
+  },
+  {
+    "id": 14,
+    "title": "Broken image on homepage banner",
+    "description": "Main promotional banner image does not load properly.",
+    "customer": "Rakib Uddin",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2026-03-04"
+  },
+  {
+    "id": 15,
+    "title": "Account gets logged out automatically",
+    "description": "User session expires within 5 minutes without inactivity.",
+    "customer": "Farzana Haque",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-04"
+  }
+]
