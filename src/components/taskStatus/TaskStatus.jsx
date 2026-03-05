@@ -20,7 +20,7 @@ const TaskStatus = ({ inProgress, onComplete }) => {
                                 inProgress.map(progress =>
                                     <div
                                         key={progress.id}
-                                        className="card-body bg-base-100 items-center text-center"
+                                        className="card-body bg-base-100 items-center text-center rounded-lg"
                                     >
                                         <h2 className="card-title">
                                             {progress.title}

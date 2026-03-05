@@ -7,35 +7,35 @@ import Navbar from './components/navbar/Navbar'
 import TicketData from './components/ticketCard/TicketData'
 import TaskStatus from './components/taskStatus/TaskStatus'
 import ResolvedTask from './components/resolvedTask/ResolvedTask'
+import Footer from './components/footer/Footer';
 const ticketsData = fetch('/tickets.json').then(res => res.json())
 
 function App() {
 
   const tickets = use(ticketsData);
 
-  const [availableTickets, setAvailableTickets] = useState([]);
+  const [allTickets, setAllTickets] = useState([]);
   const [inProgress, setInProgress] = useState([]);
   const [resolved, setResolved] = useState([]);
 
   // initialize once
   useEffect(() => {
-    setAvailableTickets(tickets);
+    setAllTickets(tickets);
   }, [tickets]);
 
   // ADD TO PROGRESS
   const handleAddToProgress = (ticket) => {
 
-    if (inProgress.some(item => item.id === ticket.id)) {
-      toast.error("Task already added!");
-      return;
-    }
+    if (inProgress.some(t => t.id === ticket.id)) return;
 
-    setInProgress(prev => [...prev, ticket]);
-
-    // remove from main list
-    setAvailableTickets(prev =>
-      prev.filter(item => item.id !== ticket.id)
+    // update ticket status
+    const updatedTickets = allTickets.map(t =>
+      t.id === ticket.id ? { ...t, status: "In Progress" } : t
     );
+
+    setAllTickets(updatedTickets);
+
+    setInProgress(prev => [...prev, { ...ticket, status: "In Progress" }]);
 
     toast.success("Task moved to In-Progress!");
   };
@@ -45,7 +45,12 @@ function App() {
 
     // remove from progress
     setInProgress(prev =>
-      prev.filter(item => item.id !== ticket.id)
+      prev.filter(t => t.id !== ticket.id)
+    );
+
+    // remove from main ticket list
+    setAllTickets(prev =>
+      prev.filter(t => t.id !== ticket.id)
     );
 
     // add to resolved
@@ -63,22 +68,22 @@ function App() {
         inProgressCount={inProgress.length}
         resolvedCount={resolved.length}
       />
-
-      <div className='max-w-350 mx-auto p-5 lg:p-10'>
+      {/* main section */}
+      <section className='max-w-350 mx-auto p-5 lg:p-10'>
         <div className='grid lg:grid-cols-4 gap-4'>
 
           {/* Customer Tickets */}
-          <div className='col-span-3'>
+          <div className='lg:col-span-3'>
             <h2 className='text-2xl font-bold pb-4'>Customer Tickets</h2>
             {
-              availableTickets.length === 0 ? (
+              allTickets.length === 0 ? (
                 <p className="text-gray-500">
                   No more tickets available.
                 </p>
               ) : (
                 <div className='grid gap-4 grid-cols-1 lg:grid-cols-2'>
                   {
-                    availableTickets.map(ticket => (
+                    allTickets.map(ticket => (
                       <TicketData
                         key={ticket.id}
                         ticket={ticket}
@@ -100,7 +105,9 @@ function App() {
             <ResolvedTask resolved={resolved} />
           </div>
         </div>
-      </div>
+      </section>
+
+      <Footer />
 
       <ToastContainer position="top-right" autoClose={2000} />
     </div>

@@ -8,6 +8,20 @@ const TicketData = ({ ticket, onAdd }) => {
         Medium: "text-yellow-400",
         Low: "text-green-500"
     };
+    const getStatusBadge = {
+        "Open": "badge badge-info",
+        "In Progress": "badge badge-warning"
+    };
+    // const getStatusBadge = (status) => {
+    //     switch (status) {
+    //         case "Open":
+    //             return "badge badge-info";
+    //         case "In Progress":
+    //             return "badge badge-warning";
+    //         default:
+    //             return "badge";
+    //     }
+    // };
 
     return (
         <div
@@ -17,7 +31,10 @@ const TicketData = ({ ticket, onAdd }) => {
             <div className="card-body">
                 <h2 className="card-title justify-between">
                     {ticket.title}
-                    <div className="badge badge-success">Open</div>
+                    {/* <h2 className='badge badge-success'>open sd sd sd</h2> */}
+                    <div className={`${getStatusBadge[ticket.status]} whitespace-nowrap px-3`}>
+                        {ticket.status}
+                    </div>
                 </h2>
 
                 <p>{ticket.description}</p>

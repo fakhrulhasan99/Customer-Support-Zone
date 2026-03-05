@@ -19,7 +19,7 @@ const ResolvedTask = ({ resolved }) => {
                             resolved.map(task =>
                                 <div
                                     key={task.id}
-                                    className="card-body bg-base-100 items-center text-center"
+                                    className="card-body bg-[#E0E7FF] items-center text-center rounded-lg"
                                 >
                                     <h2 className="card-title">
                                         {task.title}
